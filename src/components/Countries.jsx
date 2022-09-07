@@ -8,7 +8,7 @@ const Countries = () => {
     return "Loading ...";
   }
   return (
-    <div className="countries-container grid sm:grid-cols-2 gap-6 md:grid-cols-3 md:gap-x-6 md:gap-y-10 lg:gap-10">
+    <div className="countries-container grid sm:grid-cols-2 gap-6 md:grid-cols-3 md:gap-x-6 md:gap-y-10 lg:gap-8 lg:grid-cols-4">
       {Array.isArray(displayedData) &&
         displayedData?.map((c) => (
           <CountryCard
