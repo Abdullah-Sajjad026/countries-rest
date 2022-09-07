@@ -13,7 +13,6 @@ const Home = () => {
     return "Loading ...";
   }
 
-  console.log(displayedData);
   return (
     <div>
       <SearchBoxes />

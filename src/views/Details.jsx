@@ -13,10 +13,8 @@ const Details = () => {
   }
 
   const c = countries.find((c) => c.name.common === country_name);
-  console.log(c);
   let cLanguages = "",
     cNativeNames = "";
-  console.log(cLanguages);
 
   for (let lang of Object.values(c.languages)) {
     cLanguages = cLanguages + ` ${lang},`;
@@ -92,18 +90,20 @@ const Details = () => {
             </ul>
           </div>
 
-          <div className="mt-8 flex md:flex-col lg:flex-row content-between">
-            <span className="font-semibold text-lg mr-6 whitespace-nowrap">
-              Border Countries:
-            </span>
-            <div className="flex flex-wrap gap-4">
-              {c.borders.map((b) => (
-                <span className="bg-white shadow sm px-8 py-2 border-2 text-center ">
-                  {b}
-                </span>
-              ))}
+          {c?.borders && (
+            <div className="mt-8 flex md:flex-col lg:flex-row content-between">
+              <span className="font-semibold text-lg mr-6 whitespace-nowrap">
+                Border Countries:
+              </span>
+              <div className="flex flex-wrap gap-4">
+                {c.borders.map((b) => (
+                  <span className="bg-white shadow sm px-8 py-2 border-2 text-center ">
+                    {b}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>
